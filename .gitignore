@@ -1,0 +1,64 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# R
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Renviron
+*.Rproj.user/
+*.Rcheck/
+*.tar.gz
+*.Rout
+
+# RStudio
+.Rproj.user/
+rsconnect/
+
+# knitr / rmarkdown
+*_cache/
+/cache/
+*.knit.md
+*.utf8.md
+
+# Packrat / renv
+packrat/lib*/
+packrat/src/
+renv/library/
+renv/staging/
+renv/.cache/
+
+# Data files (large/binary)
+*.csv
+*.tsv
+*.rds
+*.RDS
+*.rda
+*.RData
+*.nc
+*.h5
+*.hdf5
+*.tif
+*.tiff
+*.shp
+*.dbf
+*.shx
+*.prj
+
+# Output / figures
+figures/
+plots/
+output/
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Logs and temp files
+*.log
+*.tmp
+Rplots.pdf
