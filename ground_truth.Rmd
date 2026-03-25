@@ -1,0 +1,66 @@
+---
+title: "Why we should use the GEFS control as the ground truth instead of the GFS initialization"
+output: html_document
+date: "2025-12-17"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# GFS vs. GEFS
+
+GFS and GEFS are two related yet distinct products. 
+
++ GFS is a deterministic forecast
++ GEFS is a probabilistic forecast. It produces 31 ensemble members, 30 of which are produced by perturbing the initial state and then running the model with the GFS v15.1 dynamical core, and one that is an unperturbed/control member.
+
+We are interested GEFSv12, which became available in 2020. Our GFS forecasts come from many different versions.
+
+# Criteria for selecting the ground truth
+
+We will assume that GEFS is simply a probabilistic version of GFS. Then the following conditions should be met:
+
++ GEFS should outperform GFS on CRPS
++ GEFS should underperform GFS on RMSE
+
+I next explain why this is the case
+
+## CRPS
+
+The continuous ranked probability score is defined as
+
+$$
+\begin{align}
+\text{CRPS}(F,y) &= \int_{\mathbb{R}} (F(x)-1\{y\leq x\})^2 dx\\
+&= \mathbb{E}|Y-y|-\frac{1}{2}\mathbb{E}|Y-Y'|
+\end{align}
+$$
+where $F$ is the CDF of the predicitve distribution, $y$ is the observed value, and $Y,Y'$ are random variables that have $F$ as their CDF.
+
+Since GFS is deterministic, the CRPS reduces to the absolute error
+$$
+\text{CRPS}(F,y) = \mathbb{E}|\hat{y}-y|
+$$
+
+In other words, a probabilistic foreacst should be able to achieve a lower CRPS because of the $-\frac{1}{2}\mathbb{E}|Y-Y'|$. Since GEFS is a probabilistic version of GFS, it should be calibrated to have a lower CRPS.
+
+Caveat: The performance gap may not be as large on forecasts with short lead times, as their is already little uncertainty in the forecast.
+
+## RMSE
+
+GFS is optimzed for point accuracy, while GEFS is optimized for probablisitc skill. Therefore GFS should have the lower RMSE.
+
+# Compaarison
+
+## GEFS Control
+
+Using the GEFS control member as the ground truth GFS has a 15% higher CRPS and a 11% lower RMSE.
+
+## GFS Initialization
+
+Using the GFS initialization as the ground truth GFS has a 34% lower CRPS and a 48% lower RMSE.
+
+# Conclusion
+
+The GFS initialization is not a valid ground truth. The GEFS control member may be more appropriatte.
