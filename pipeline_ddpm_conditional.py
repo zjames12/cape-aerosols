@@ -12,6 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""
+Conditional DDPM pipeline for CAPE aerosols diffusion model.
+
+This module implements a conditional DDPM (Denoising Diffusion Probabilistic Model)
+pipeline that extends the HuggingFace diffusers pipeline to support conditioning
+on meteorological and aerosol data for atmospheric forecasting.
+"""
+
 import pickle
 import numpy as np
 from typing import List, Optional, Tuple, Union

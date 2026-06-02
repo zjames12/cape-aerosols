@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Configuration module for CAPE aerosols diffusion model training.
+
+This module defines the TrainingConfig dataclass and provides preset configurations
+for different model types (aerosols vs no-aerosols models).
+"""
+
 from dataclasses import dataclass
 from typing import List, Optional
 

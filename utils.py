@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Utility functions for CAPE aerosols diffusion model training and evaluation.
+
+This module provides helper functions for image processing, CUDA setup,
+model information display, and pipeline creation for inference.
+"""
+
 import os
 import numpy as np
 import torch

@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Sampling and scoring utilities for CAPE aerosols diffusion model evaluation.
+
+This module provides functionality for generating ensemble forecasts from trained
+diffusion models and evaluating their performance against observational data.
+"""
+
 from diffusers import UNet2DModel
 from safetensors.torch import load_file
 import torch

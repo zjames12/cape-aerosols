@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+No-aerosols diffusion model definition and utilities.
+
+This module defines the UNet2D model architecture for CAPE prediction without
+aerosol conditioning, using only basic meteorological variables as input.
+"""
+
 import torch
 from diffusers import UNet2DModel
 from safetensors.torch import load_file

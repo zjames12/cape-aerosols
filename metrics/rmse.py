@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+"""
+RMSE and spread-skill analysis for CAPE aerosols diffusion model evaluation.
+
+This module calculates Root Mean Square Error (RMSE) and spread-skill ratios
+to evaluate the performance and reliability of ensemble forecasts compared
+to GEFS operational forecasts.
+"""
+
 from scores.probability import crps_for_ensemble, brier_score_for_ensemble
 from scores.continuous import mse
 import pandas as pd

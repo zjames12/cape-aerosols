@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+CRPS (Continuous Ranked Probability Score) evaluation for CAPE aerosols diffusion model.
+
+This module calculates CRPS scores to evaluate the probabilistic skill of
+ensemble forecasts from the diffusion model compared to GEFS forecasts.
+"""
+
 from scores.probability import crps_for_ensemble
 import pandas as pd
 from tqdm import tqdm

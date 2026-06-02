@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+"""
+Brier score evaluation for CAPE aerosols diffusion model.
+
+This module calculates Brier scores for binary event prediction to evaluate
+how well the ensemble forecasts predict threshold exceedance events
+compared to GEFS and climatological forecasts.
+"""
+
 from scores.probability import crps_for_ensemble, brier_score_for_ensemble
 import pandas as pd
 import xarray as xr

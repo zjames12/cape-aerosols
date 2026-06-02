@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Data loading and preprocessing utilities for CAPE aerosols diffusion model.
+
+This module handles dataset loading from disk, data transformations including
+normalization and scaling, and creation of PyTorch DataLoaders for training.
+"""
+
 import torch
 import datasets
 

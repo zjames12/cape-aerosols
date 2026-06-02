@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Core training functionality for CAPE aerosols diffusion models.
+
+This module contains the main training loop, optimizer setup, learning rate scheduling,
+and model checkpoint saving functionality. It supports both aerosols and no-aerosols models.
+"""
+
 import os
 import torch
 import torch.nn.functional as F

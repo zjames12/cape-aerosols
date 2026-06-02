@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Aerosols diffusion model definition and utilities.
+
+This module defines the UNet2D model architecture for aerosols-conditioned
+CAPE prediction and provides functions for model creation and loading.
+"""
+
 import torch
 from diffusers import UNet2DModel
 from safetensors.torch import load_file
